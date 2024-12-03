@@ -4,7 +4,7 @@ from typing import List, Tuple
 
 
 def parse_input() -> Tuple[List, List]:
-    with open("resources/day_1.txt", "r") as f:
+    with open("resources/day_1", "r") as f:
         data = f.readlines()
 
     left = []
@@ -22,8 +22,8 @@ def find_total_difference(input: Tuple[List, List]) -> int:
     left, right = input
     total = 0
 
-    for l, r in zip(sorted(left), sorted(right)):
-        total += abs(l - r)
+    for a, b in zip(sorted(left), sorted(right)):
+        total += abs(a - b)
 
     return total
 
