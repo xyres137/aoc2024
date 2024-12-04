@@ -1,5 +1,4 @@
-from functools import reduce
-from typing import List, Dict, Tuple, Set
+from typing import Dict, Tuple, Set
 import numpy as np
 
 
@@ -15,7 +14,7 @@ def parse_input() -> Dict[str, Set[Tuple[int, int]]]:
         return occ
 
 
-def find_xmas_occurrences(occ: Dict[str, Set[Tuple[int, int]]]):
+def find_xmas_occurrences(occ: Dict[str, Set[Tuple[int, int]]]) -> int:
     total = 0
     directions = [(1, 0), (-1, 0), (0, 1), (0, -1), (1, 1), (-1, -1), (1, -1), (-1, 1)]
 
@@ -32,7 +31,7 @@ def find_xmas_occurrences(occ: Dict[str, Set[Tuple[int, int]]]):
     return total
 
 
-def find_crossed_mas_occurrences(occ: Dict[str, Set[Tuple[int, int]]]):
+def find_crossed_mas_occurrences(occ: Dict[str, Set[Tuple[int, int]]]) -> int:
     total = 0
     for i, j in occ["A"]:
         b = np.array(
